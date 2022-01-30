@@ -2,6 +2,6 @@
 
 Amb is a CLI app that allows you to create new Ambient projects and interact with running Ambient applications.
 
-A quickstart is available in the [ambient-template repository](https://github.com/ambientkit/ambient-template).
+You can read why the Ambient framework was created [here](https://github.com/ambientkit/ambient#what-is-it).
 
-You can read about the framework [here](https://github.com/ambientkit/ambient).
+A quickstart is available in the [ambient-template repository](https://github.com/ambientkit/ambient-template).
