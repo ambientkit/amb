@@ -1,0 +1,2 @@
+# amb
+Ambient CLI
