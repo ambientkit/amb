@@ -1,9 +1,9 @@
-github.com/ambientkit/ambient v0.0.0-20220130215446-51e9b5f7b9eb h1:k/NiIsRo9ZeBNU+ngdV12Oeb9whcxY+IWeDivZ4xk9A=
-github.com/ambientkit/ambient v0.0.0-20220130215446-51e9b5f7b9eb/go.mod h1:iamUriotuBEeHo4yWCk9CQsR2sX2VmnFRSF620RD5gU=
+github.com/ambientkit/ambient v0.0.0-20220130222009-2de3a3c95be2 h1:IUKWvah9WTbQH+5xXN9usdRLxv2Suubsrb9hlK/8woM=
+github.com/ambientkit/ambient v0.0.0-20220130222009-2de3a3c95be2/go.mod h1:iamUriotuBEeHo4yWCk9CQsR2sX2VmnFRSF620RD5gU=
 github.com/ambientkit/away v0.0.0-20220130205410-2cede7cd77d7 h1:ttlvcnQaFWsWPCW8z1g6VqdimnJRy1Beo6GNxd+9BIA=
 github.com/ambientkit/away v0.0.0-20220130205410-2cede7cd77d7/go.mod h1:LhGMsnt/Ea/PVq58wNzRo8c44jsGQljCxv9MtIidETk=
-github.com/ambientkit/plugin v0.0.0-20220130215711-c4c1a2b48a8c h1:OyW0T1PeTlDswoN9S5IwsknMckn+dR8IVVf8f/hadbo=
-github.com/ambientkit/plugin v0.0.0-20220130215711-c4c1a2b48a8c/go.mod h1:vWMt/E7znPA2CY+E0z3dGqeENM3HnpIOuSmsbY201yo=
+github.com/ambientkit/plugin v0.0.0-20220130222035-0acf1cfcf200 h1:2pVIbF+3nJp3FDnpWs0OgiluWmBrqNwo68pbT4mNDP4=
+github.com/ambientkit/plugin v0.0.0-20220130222035-0acf1cfcf200/go.mod h1:pr6lxRUaPjp0/jv8F/IrwURswYDoVjVm5XaKmvrHi5A=
 github.com/benbjohnson/clock v1.1.0 h1:Q92kusRqC1XV2MjkWETPvjJVqKetz1OzxZB7mHJLju8=
 github.com/benbjohnson/clock v1.1.0/go.mod h1:J11/hYXuz8f4ySSvYwY0FKfm+ezbsZBKZxNJlLklBHA=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
