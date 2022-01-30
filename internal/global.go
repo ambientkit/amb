@@ -2,7 +2,7 @@ package internal
 
 import (
 	"github.com/ambientkit/ambient"
-	"github.com/ambientkit/ambient/lib/requestclient"
+	"github.com/ambientkit/ambient/pkg/requestclient"
 )
 
 var (

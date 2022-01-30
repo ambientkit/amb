@@ -7,8 +7,8 @@ import (
 
 	"github.com/ambientkit/amb/internal"
 	"github.com/ambientkit/ambient"
-	"github.com/ambientkit/ambient/lib/envdetect"
-	"github.com/ambientkit/ambient/lib/requestclient"
+	"github.com/ambientkit/ambient/pkg/envdetect"
+	"github.com/ambientkit/ambient/pkg/requestclient"
 	"github.com/ambientkit/plugin/logger/zaplogger"
 	"github.com/c-bata/go-prompt"
 )
