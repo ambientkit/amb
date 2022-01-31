@@ -3,8 +3,8 @@ module github.com/ambientkit/amb
 go 1.17
 
 require (
-	github.com/ambientkit/ambient v0.0.0-20220130222642-374efb01c30d
-	github.com/ambientkit/plugin v0.0.0-20220130222750-87fd4789d937
+	github.com/ambientkit/ambient v0.0.0-20220131003015-220f042a5256
+	github.com/ambientkit/plugin v0.0.0-20220131003240-0c3141a87ad7
 	github.com/c-bata/go-prompt v0.2.6
 )
 
