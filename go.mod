@@ -3,13 +3,13 @@ module github.com/ambientkit/amb
 go 1.17
 
 require (
-	github.com/ambientkit/ambient v0.0.0-20220131003015-220f042a5256
-	github.com/ambientkit/plugin v0.0.0-20220131003240-0c3141a87ad7
+	github.com/ambientkit/ambient v0.0.0-20220204201412-d36258bea897
+	github.com/ambientkit/plugin v0.0.0-20220204201530-a9ba32b723c1
 	github.com/c-bata/go-prompt v0.2.6
 )
 
 require (
-	github.com/ambientkit/away v0.0.0-20220130205410-2cede7cd77d7 // indirect
+	github.com/ambientkit/away v0.0.0-20220204201214-109176be7537 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/go-runewidth v0.0.13 // indirect
