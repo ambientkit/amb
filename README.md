@@ -4,4 +4,4 @@
 
 Thanks for visiting! All docs are available [here](https://ambientkit.github.io/docs/).
 
-This repository contains the ambient CLI app, `amb`. It allows you to create new Ambient projects and interact with running Ambient apps.
+This repository contains the Ambient CLI app, `amb`. It allows you to create new Ambient projects and interact with running Ambient apps.
