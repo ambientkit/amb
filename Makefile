@@ -15,3 +15,8 @@ default: run
 .PHONY: run
 run:
 	go run cmd/amb/main.go
+
+# Run go mod tidy.
+.PHONY: tidy
+tidy:
+	go mod tidy -compat=1.17

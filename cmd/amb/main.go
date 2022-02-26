@@ -7,6 +7,7 @@ import (
 
 	"github.com/ambientkit/amb/internal"
 	"github.com/ambientkit/ambient"
+	"github.com/ambientkit/ambient/pkg/ambientapp"
 	"github.com/ambientkit/ambient/pkg/envdetect"
 	"github.com/ambientkit/ambient/pkg/requestclient"
 	"github.com/ambientkit/plugin/logger/zaplogger"
@@ -32,7 +33,7 @@ func main() {
 	}
 
 	// Use an Ambient logger for consistency.
-	logger, err := ambient.NewAppLogger(appName, appVersion, zaplogger.New(), logLevel)
+	logger, err := ambientapp.NewAppLogger(appName, appVersion, zaplogger.New(), logLevel)
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
