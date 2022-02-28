@@ -51,6 +51,7 @@ func main() {
 
 	cmds := internal.NewCommandList()
 	cmds.Add(&internal.CmdCreateApp{})
+	cmds.Add(&internal.CmdCreatePlugin{})
 	cmds.Add(&internal.CmdEnable{})
 	cmds.Add(&internal.CmdGrant{})
 	cmds.Add(&internal.CmdEncrypt{})

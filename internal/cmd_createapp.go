@@ -12,10 +12,10 @@ import (
 )
 
 const (
-	paramFolder     = "-folder"
-	paramTemplate   = "-template"
-	defaultTemplate = "https://github.com/ambientkit/ambient-template"
-	defaultFolder   = "ambapp"
+	paramCreateAppFolder     = "-folder"
+	paramCreateAppTemplate   = "-template"
+	defaultCreateAppTemplate = "https://github.com/ambientkit/ambient-template"
+	defaultCreateAppFolder   = "ambapp"
 )
 
 // CmdCreateApp represents a command object.
@@ -30,23 +30,23 @@ func (c *CmdCreateApp) Command() string {
 
 // Suggestion returns the suggestion for the initial command.
 func (c *CmdCreateApp) Suggestion() prompt.Suggest {
-	return prompt.Suggest{Text: c.Command(), Description: "Create new Ambient app..."}
+	return prompt.Suggest{Text: c.Command(), Description: "Create Ambient app..."}
 }
 
 // ArgumentSuggestions returns a smart suggestion group that includes validation.
 func (c *CmdCreateApp) ArgumentSuggestions() SmartSuggestGroup {
 	return SmartSuggestGroup{
-		{Suggest: prompt.Suggest{Text: paramFolder, Description: fmt.Sprintf("Folder to create the project (default: %v)", defaultFolder)}, Required: false},
-		{Suggest: prompt.Suggest{Text: paramTemplate, Description: fmt.Sprintf("Template project to git clone (default: %v)", defaultTemplate)}, Required: false},
+		{Suggest: prompt.Suggest{Text: paramCreateAppFolder, Description: fmt.Sprintf("Folder to create the project (default: %v)", defaultCreateAppFolder)}, Required: false},
+		{Suggest: prompt.Suggest{Text: paramCreateAppTemplate, Description: fmt.Sprintf("Template project to git clone (default: %v)", defaultCreateAppTemplate)}, Required: false},
 	}
 }
 
 // Executer executes the command.
 func (c *CmdCreateApp) Executer(args []string) {
 	// Get folder name.
-	folderName, err := c.Param(args, paramFolder)
+	folderName, err := c.Param(args, paramCreateAppFolder)
 	if err != nil {
-		folderName = defaultFolder
+		folderName = defaultCreateAppFolder
 	}
 
 	// Determine if folder already exists.
@@ -56,9 +56,9 @@ func (c *CmdCreateApp) Executer(args []string) {
 	}
 
 	// Get template name.
-	templateName, err := c.Param(args, paramTemplate)
+	templateName, err := c.Param(args, paramCreateAppTemplate)
 	if err != nil {
-		templateName = defaultTemplate
+		templateName = defaultCreateAppTemplate
 	}
 
 	// Perform git clone on the template.
