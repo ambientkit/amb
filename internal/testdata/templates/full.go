@@ -2,7 +2,6 @@
 package var1
 
 import (
-	"embed"
 	"html/template"
 	"io"
 	"net/http"
@@ -76,7 +75,7 @@ func (p *Plugin) Settings() []ambient.Setting {
 }
 
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, *embed.FS) {
+func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
 	return []ambient.Asset{}, nil
 }
 
