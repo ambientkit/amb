@@ -51,7 +51,7 @@ func (c *CmdCreateApp) Executer(args []string) {
 
 	// Determine if folder already exists.
 	if _, err := os.Stat(folderName); !os.IsNotExist(err) {
-		log.Error("amb: folder already exists: %v", folderName)
+		log.Error("folder already exists: %v", folderName)
 		return
 	}
 
@@ -62,14 +62,14 @@ func (c *CmdCreateApp) Executer(args []string) {
 	}
 
 	// Perform git clone on the template.
-	log.Info("amb: creating new project from template: %v", templateName)
+	log.Info("creating new project from template: %v", templateName)
 	gitArgs := []string{"clone", "--depth=1", "--branch=main", templateName, folderName}
 	cmd := exec.Command("git", gitArgs...)
 	var stdErr bytes.Buffer
 	cmd.Stderr = &stdErr
 	err = cmd.Run()
 	if err != nil {
-		log.Error("amb: couldn't create project (git %v): %v %v", strings.Join(gitArgs, " "), err.Error(), stdErr.String())
+		log.Error("couldn't create project (git %v): %v %v", strings.Join(gitArgs, " "), err.Error(), stdErr.String())
 		return
 	}
 
@@ -77,18 +77,18 @@ func (c *CmdCreateApp) Executer(args []string) {
 	gitFolder := filepath.Join(folderName, ".git")
 	err = os.RemoveAll(gitFolder)
 	if err != nil {
-		log.Error("amb: couldn't remove .git folder: %v", err.Error())
+		log.Error("couldn't remove .git folder: %v", err.Error())
 	}
 
 	// Make bin folder.
 	binFolder := filepath.Join(folderName, "bin")
 	err = os.Mkdir(binFolder, 0755)
 	if err != nil {
-		log.Error("amb: couldn't create bin folder: %v", err.Error())
+		log.Error("couldn't create bin folder: %v", err.Error())
 	}
 
-	log.Info("amb: removing folder: %v", gitFolder)
-	log.Info("amb: created project successfully in folder: %v", folderName)
+	log.Info("removing folder: %v", gitFolder)
+	log.Info("created project successfully in folder: %v", folderName)
 }
 
 // Completer returns a list of suggestions based on the user input.

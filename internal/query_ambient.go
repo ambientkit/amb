@@ -13,7 +13,7 @@ func pluginNames() []prompt.Suggest {
 	pluginNames := make([]string, 0)
 	err := rc.Get("/plugins", &pluginNames)
 	if err != nil {
-		log.Error("amb: could not get plugin names: %v", err.Error())
+		log.Error("could not get plugin names: %v", err.Error())
 		return nil
 	}
 

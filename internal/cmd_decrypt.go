@@ -23,9 +23,9 @@ func (c *CmdDecrypt) Suggestion() prompt.Suggest {
 func (c *CmdDecrypt) Executer(args []string) {
 	err := rc.Post("/storage/decrypt", nil, nil)
 	if err != nil {
-		log.Error("amb: error decrypted storage: %v", err)
+		log.Error("error decrypted storage: %v", err)
 	} else {
-		log.Info("amb: decrypted storage file: site.bin")
+		log.Info("decrypted storage file: site.bin")
 	}
 }
 

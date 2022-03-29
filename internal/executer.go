@@ -17,7 +17,7 @@ func (cl *CommandList) Executer(s string) {
 		if firstCommand == v.Command() {
 			// Ensure all required arguments exist.
 			if valid, missing := v.ArgumentSuggestions().Valid(args); !valid {
-				log.Error("amb: missing argument for '%v': %v", firstCommand, missing)
+				log.Error("missing argument for '%v': %v", firstCommand, missing)
 				return
 			}
 			// Execute the command.
@@ -28,6 +28,6 @@ func (cl *CommandList) Executer(s string) {
 	}
 
 	if !handled {
-		log.Info("amb: command not recognized")
+		log.Info("command not recognized")
 	}
 }

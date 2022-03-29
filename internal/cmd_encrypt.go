@@ -23,9 +23,9 @@ func (c *CmdEncrypt) Suggestion() prompt.Suggest {
 func (c *CmdEncrypt) Executer(args []string) {
 	err := rc.Post("/storage/encrypt", nil, nil)
 	if err != nil {
-		log.Error("amb: error encrypting storage: %v", err)
+		log.Error("error encrypting storage: %v", err)
 	} else {
-		log.Info("amb: encrypted storage file: site.bin")
+		log.Info("encrypted storage file: site.bin")
 	}
 }
 

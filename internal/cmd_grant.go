@@ -24,26 +24,26 @@ func (c *CmdGrant) Suggestion() prompt.Suggest {
 // Executer executes the command.
 func (c *CmdGrant) Executer(args []string) {
 	if len(args) < 2 {
-		log.Info("amb: command not recognized")
+		log.Info("command not recognized")
 		return
 	}
 
 	if args[1] == "all" {
 		// Enable grants for all plugins.
-		log.Info("amb: adding grants for all trusted plugins")
+		log.Info("adding grants for all trusted plugins")
 
 		err := rc.Post("/plugins/grant", nil, nil)
 		if err != nil {
-			log.Error("amb: cloud not enable all plugins grants: %v", err.Error())
+			log.Error("cloud not enable all plugins grants: %v", err.Error())
 		}
 	} else {
 		// Enable grants for one plugin.
 		pluginName := args[1]
-		log.Info("amb: adding grants for plugin: %v", pluginName)
+		log.Info("adding grants for plugin: %v", pluginName)
 
 		err := rc.Post(fmt.Sprintf("/plugins/%v/grant", pluginName), nil, nil)
 		if err != nil {
-			log.Error("amb: cloud not enable plugin (%v) grants: %v", pluginName, err.Error())
+			log.Error("cloud not enable plugin (%v) grants: %v", pluginName, err.Error())
 		}
 	}
 }

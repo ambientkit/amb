@@ -44,7 +44,7 @@ func main() {
 		"")
 
 	// TODO: Should make this a struct instead.
-	internal.SetGlobals(logger, rc)
+	internal.SetGlobals(logger.Named("amb"), rc)
 
 	// Get the exit command.
 	exit := &internal.CmdExit{}

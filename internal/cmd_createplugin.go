@@ -56,7 +56,7 @@ func (c *CmdCreatePlugin) Executer(args []string) {
 
 	// Determine if folder already exists.
 	if _, err := os.Stat(folderName); !os.IsNotExist(err) {
-		log.Error("amb: folder already exists: %v", folderName)
+		log.Error("folder already exists: %v", folderName)
 		return
 	}
 
@@ -69,14 +69,14 @@ func (c *CmdCreatePlugin) Executer(args []string) {
 	// Make plugin folder.
 	err = os.MkdirAll(folderName, 0755)
 	if err != nil {
-		log.Error("amb: couldn't create folder (%v): %v", folderName, err.Error())
+		log.Error("couldn't create folder (%v): %v", folderName, err.Error())
 		return
 	}
 
 	// Use the root folder.
 	fsys, err := fs.Sub(assets, ".")
 	if err != nil {
-		log.Error("amb: couldn't load assets: %v", err.Error())
+		log.Error("couldn't load assets: %v", err.Error())
 		return
 	}
 
@@ -84,7 +84,7 @@ func (c *CmdCreatePlugin) Executer(args []string) {
 	templatePath := path.Join("testdata", "templates", templateName+".go")
 	f, err := fsys.Open(templatePath)
 	if err != nil {
-		log.Error("amb: couldn't load assets: %v", err.Error())
+		log.Error("couldn't load assets: %v", err.Error())
 		return
 	}
 	defer f.Close()
@@ -92,7 +92,7 @@ func (c *CmdCreatePlugin) Executer(args []string) {
 	// Get the contents.
 	pluginTemplate, err := ioutil.ReadAll(f)
 	if err != nil {
-		log.Error("amb: couldn't find template (%v): %v", templatePath, err.Error())
+		log.Error("couldn't find template (%v): %v", templatePath, err.Error())
 		return
 	}
 
@@ -103,11 +103,11 @@ func (c *CmdCreatePlugin) Executer(args []string) {
 	finalOutput := path.Join(folderName, path.Base(folderName)+".go")
 	err = os.WriteFile(finalOutput, []byte(out), 0644)
 	if err != nil {
-		log.Error("amb: couldn't write template (%v): %v", finalOutput, err.Error())
+		log.Error("couldn't write template (%v): %v", finalOutput, err.Error())
 		return
 	}
 
-	log.Info("amb: created plugin successfully: %v", finalOutput)
+	log.Info("created plugin successfully: %v", finalOutput)
 }
 
 // Completer returns a list of suggestions based on the user input.
