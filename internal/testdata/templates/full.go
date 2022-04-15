@@ -2,6 +2,7 @@
 package var1
 
 import (
+	"context"
 	"html/template"
 	"io"
 	"net/http"
@@ -22,12 +23,12 @@ func New() *Plugin {
 }
 
 // PluginName returns the plugin name.
-func (p *Plugin) PluginName() string {
+func (p *Plugin) PluginName(context.Context) string {
 	return "var1"
 }
 
 // PluginVersion returns the plugin version.
-func (p *Plugin) PluginVersion() string {
+func (p *Plugin) PluginVersion(context.Context) string {
 	return "1.0.0"
 }
 
@@ -52,10 +53,10 @@ func (p *Plugin) SessionManager(logger ambient.Logger, ss ambient.SessionStorer)
 }
 
 // Routes sets routes for the plugin.
-func (p *Plugin) Routes() {}
+func (p *Plugin) Routes(context.Context) {}
 
 // Middleware returns router middleware.
-func (p *Plugin) Middleware() []func(next http.Handler) http.Handler {
+func (p *Plugin) Middleware(context.Context) []func(next http.Handler) http.Handler {
 	return []func(next http.Handler) http.Handler{}
 }
 
@@ -65,17 +66,17 @@ func (p *Plugin) TemplateEngine(logger ambient.Logger, injector ambient.AssetInj
 }
 
 // GrantRequests returns a list of grants requested by the plugin.
-func (p *Plugin) GrantRequests() []ambient.GrantRequest {
+func (p *Plugin) GrantRequests(context.Context) []ambient.GrantRequest {
 	return []ambient.GrantRequest{}
 }
 
 // Settings returns a list of plugin settings.
-func (p *Plugin) Settings() []ambient.Setting {
+func (p *Plugin) Settings(context.Context) []ambient.Setting {
 	return []ambient.Setting{}
 }
 
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
+func (p *Plugin) Assets(context.Context) ([]ambient.Asset, ambient.FileSystemReader) {
 	return []ambient.Asset{}, nil
 }
 

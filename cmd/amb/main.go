@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"log"
@@ -33,7 +34,8 @@ func main() {
 	}
 
 	// Use an Ambient logger for consistency.
-	logger, err := ambientapp.NewAppLogger(appName, appVersion, zaplogger.New(), logLevel)
+	logger, err := ambientapp.NewAppLogger(context.Background(), appName,
+		appVersion, zaplogger.New(), logLevel)
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
